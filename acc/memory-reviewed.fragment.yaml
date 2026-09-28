@@ -1,0 +1,16 @@
+# Merge these keys into a Hermes profile's existing config.yaml.
+# This is a fragment, not a complete replacement for model/provider configuration.
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  provider: ""                 # Built-in memory; external providers have separate write paths.
+  write_approval: true         # Agent writes ask or enter /memory pending.
+  nudge_interval: 10           # Generate candidates periodically, without auto-committing.
+
+skills:
+  write_approval: true         # skill_manage changes enter /skills pending.
+  creation_nudge_interval: 10
+
+auxiliary:
+  background_review:
+    enabled: true              # Review forks may suggest, but these write gates stage.
